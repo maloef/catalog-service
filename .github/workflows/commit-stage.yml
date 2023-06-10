@@ -24,8 +24,8 @@ jobs:
           cache: gradle
       - name: Build, unit tests and integration tests
         run: |
-          chmod +x gradlew
-          ./gradlew build
+          chmod +x mvnw
+          ./mvnw build
       - name: Code vulnerability scanning
         uses: anchore/scan-action@v3
         id: scan
@@ -58,7 +58,7 @@ jobs:
           cache: maven
       - name: Build container image
         run: |
-          chmod +x gradlew
+          chmod +x mvnw
           ./mvn spring-boot:build-image
       - name: OCI image vulnerability scanning
         uses: anchore/scan-action@v3
