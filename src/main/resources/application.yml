@@ -1,5 +1,6 @@
 server:
   port: 9001
+  shutdown: graceful
   tomcat:
     connection-timeout: 2s
     keep-alive-timeout: 15s
@@ -18,4 +19,7 @@ spring:
 #  sql:
 #    init:
 #      mode: always
-
+  application:
+    name: catalog-service
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
