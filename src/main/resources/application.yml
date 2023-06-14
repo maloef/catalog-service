@@ -8,7 +8,12 @@ server:
       max: 50
       min-spare: 5
 
+
 spring:
+  application:
+    name: catalog-service
+  config:
+    import: optional:configserver:http://localhost:8888
   datasource:
     username: user
     password: password
@@ -16,10 +21,8 @@ spring:
     hikari:
       connection-timeout: 2000
       maximum-pool-size: 5
-#  sql:
-#    init:
-#      mode: always
-  application:
-    name: catalog-service
   lifecycle:
     timeout-per-shutdown-phase: 15s
+
+polar:
+  greeting: Welcome Master!
